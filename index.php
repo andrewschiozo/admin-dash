@@ -1,3 +1,3 @@
 <?php
 
-echo 'Hello world 123456789';
+echo 'Hello world ';
