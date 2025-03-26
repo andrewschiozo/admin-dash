@@ -1,8 +1,8 @@
 FROM php:8.2-fpm-alpine
 
 # PHP ext
-RUN apk add --no-cache $PHPIZE_DEPS curl-dev \
-    && docker-php-ext-install curl fileinfo mbstring openssl pdo_mysql pdo_odbc pdo_sqlite pdo_pgsql zip
+RUN apk add --no-cache $PHPIZE_DEPS \
+    && docker-php-ext-install fileinfo mbstring openssl pdo_mysql pdo_odbc pdo_sqlite pdo_pgsql
 
 # PHP Timezone
 RUN echo "date.timezone = America/Sao_Paulo" > "$PHP_INI_DIR/conf.d/date_timezone.ini"
