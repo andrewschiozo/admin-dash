@@ -24,6 +24,6 @@
     </style>
 </head>
 <body>
-    <p>Whoopsss</p>
+    <p>Whoopssss</p>
 </body>
 </html>

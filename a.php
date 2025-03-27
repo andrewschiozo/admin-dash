@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-$_SERVER['HTTP_X_HUB_SIGNATURE'] = 'sha256=c49d3865697080ab3bd95da36c2b5fcc5e4ad0dd06ad09e9aaf3d01b18279a3e';
+$_SERVER['HTTP_X_HUB_SIGNATURE'] = 'sha256=b4cc469e3d0f5f1b001e2743e102d095f9ea0584c57448fbeecbd256d189b469';
 
 abstract class Deploy
 {
