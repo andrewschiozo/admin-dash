@@ -1,12 +1,12 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-header('Content-Type: application/json; charset=utf-8');
+$_SERVER['HTTP_X_HUB_SIGNATURE'] = 'sha256=c49d3865697080ab3bd95da36c2b5fcc5e4ad0dd06ad09e9aaf3d01b18279a3e';
 
 abstract class Deploy
 {
     private static string $secret = 'YhçaQd ) -_! ka12@ @adb#';
-    private static string $dirApplication = '/var/www/html';
+    private static string $dirApplication = '.';
     private static string $logfile = 'deploy.log';
 
     public static function deploy()
@@ -15,7 +15,7 @@ abstract class Deploy
         chdir(self::$dirApplication);
         
         if(!self::validateSecret())
-            self::deployError();
+            return self::deployError();
 
         $outputGitConfig = shell_exec('git config --global --add safe.directory /var/www/html 2>&1');
         self::log("Git config safe.directory :\n" . $outputGitConfig);
@@ -25,7 +25,7 @@ abstract class Deploy
 
         self::log('Deploy concluído');
 
-        http_response_code(200);
+        header('Content-Type: application/json; charset=utf-8', true, 200);
         $output = ['message' => 'Deployment completed'];
         echo json_encode($output);
     }
@@ -44,7 +44,7 @@ abstract class Deploy
         }
     
         list($hashAlgo, $signature) = explode('=', @$_SERVER['HTTP_X_HUB_SIGNATURE']);
-        $payload = $HTTP_RAW_POST_DATA ?: file_get_contents('php://input');
+        $payload = '' ?: file_get_contents('php://input');
         
         $compute = hash_hmac($hashAlgo, $payload, self::$secret);
         
@@ -53,7 +53,7 @@ abstract class Deploy
 
     private static function deployError()
     {
-        http_response_code(401);
+        header('Content-Type: application/json; charset=utf-8', true, 401);
         $output = ['message' => 'Secret key error'];
         echo json_encode($output);
         self::log('Secret key error');
