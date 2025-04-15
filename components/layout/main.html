@@ -1,0 +1,287 @@
+<!-- BEGIN #header -->
+<div id="header" class="app-header">
+    <!-- BEGIN navbar-header -->
+    <div class="navbar-header">
+        <a href="#index.html" class="navbar-brand"><span class="navbar-logo"></span> <b class="me-1">Sec</b> Admin</a>
+        <button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- END navbar-header -->
+    <!-- BEGIN header-nav -->
+    <div class="navbar-nav">
+        <div class="navbar-item navbar-form">
+            <form action="" method="POST" name="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Pesquisa rápida" />
+                    <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="navbar-item dropdown">
+            <a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle icon">
+                <i class="fa fa-bell"></i>
+                <span class="badge">5</span>
+            </a>
+            <div class="dropdown-menu media-list dropdown-menu-end">
+                <div class="dropdown-header">NOTIFICAÇÕES (5)</div>
+                <a href="javascript:;" class="dropdown-item media">
+                    <div class="media-left">
+                        <i class="fa fa-bug media-object bg-gray-500"></i>
+                    </div>
+                    <div class="media-body">
+                        <h6 class="media-heading">Server Error Reports <i class="fa fa-exclamation-circle text-danger"></i></h6>
+                        <div class="text-muted fs-10px">há 3 minutos</div>
+                    </div>
+                </a>
+                <a href="javascript:;" class="dropdown-item media">
+                    <div class="media-left">
+                        <img src="assets/img/user/pb.png" class="media-object" alt="" />
+                        <i class="fa-solid fa-chart-diagram text-blue media-object-icon"></i>
+                    </div>
+                    <div class="media-body">
+                        <h6 class="media-heading">Pedro Bottesi</h6>
+                        <p>Atualizou os indicadores</p>
+                        <div class="text-muted fs-10px">há 25 minutes</div>
+                    </div>
+                </a>
+                
+                <div class="dropdown-footer text-center">
+                    <a href="javascript:;" class="text-decoration-none">Ver mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-item navbar-user dropdown">
+            <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+                <img class="sa-user-avatar" src="assets/img/user/user-1.jpg" alt="" /> 
+                <span>
+                    <span class="d-none d-md-inline sa-user-name">{{username}}</span>
+                    <b class="caret"></b>
+                </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end me-1">
+                <a href="extra_profile.html" class="dropdown-item">Meu Perfil</a>
+                <a href="email_inbox.html" class="dropdown-item d-flex align-items-center">
+                    Mensagens
+                    <span class="badge bg-danger rounded-pill ms-auto pb-4px">2</span> 
+                </a>
+                <a href="extra_settings_page.html" class="dropdown-item">Configurações</a>
+                <div class="dropdown-divider"></div>
+                <a href="#" onclick="SecAdminApp.logout()" class="dropdown-item">Sair</a>
+            </div>
+        </div>
+    </div>
+    <!-- END header-nav -->
+</div>
+<!-- END #header -->
+
+<!-- BEGIN #sidebar -->
+<div id="sidebar" class="app-sidebar">
+    <!-- BEGIN scrollbar -->
+    <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+        <!-- BEGIN menu -->
+        <div class="menu">
+            <!-- Moved to old/menu-profile.html -->
+            
+            <div class="menu-header">Navigation</div>
+            
+            <div class="menu-item active">
+                <a href="#dashboard" data-component="dashboard/index" class="menu-link sa-menu-link">
+                    <div class="menu-icon">
+                        <i class="fa fa-sitemap"></i>
+                    </div>
+                    <div class="menu-text">Dashboard</div>
+                </a>
+            </div>
+
+            <div class="menu-item has-sub">
+                <a href="javascript:;" class="menu-link sa-menu-link">
+                    <div class="menu-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+                    <div class="menu-text">Localização Biométrica</div>
+                    <div class="menu-caret"></div>
+                </a>
+                <div class="menu-submenu">
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link"><div class="menu-text">Detecção Batch</div></a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link"><div class="menu-text">Últimos alertas</div></a>
+                    </div>
+                    <div class="menu-item active">
+                        <a href="#index.html" class="menu-link sa-menu-link"><div class="menu-text">Atualização dados</div></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item has-sub">
+                <a href="javascript:;" class="menu-link sa-menu-link">
+                    <div class="menu-icon"><i class="fa-solid fa-video"></i></div>
+                    <div class="menu-text">Dispositivos</div>
+                    <div class="menu-caret"></div>
+                </a>
+                <div class="menu-submenu">
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link"><div class="menu-text">Mapa Dispositivos</div></a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link"><div class="menu-text">Relação de Câmeras</div></a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link"><div class="menu-text">Cadastro</div></a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link"><div class="menu-text">Logs</div></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="menu-item has-sub">
+                <a href="#" class="menu-link sa-menu-link">
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-chess-knight"></i>
+                    </div>
+                    <div class="menu-text">Operações <span class="menu-label">NOVO</span></div> 
+                    <div class="menu-caret"></div>
+                </a>
+                <div class="menu-submenu">
+                    <div class="menu-item">
+                        <a href="#operacoes" data-component="operacoes/index" class="menu-link sa-menu-link">
+                            <div class="menu-text">Dashboard</div>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#operacoes/cadastro" data-component="operacoes/form" class="menu-link sa-menu-link">
+                            <div class="menu-text">Cadastro</div>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link">
+                            <div class="menu-text">Alteração</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item has-sub">
+                <a href="javascript:;" class="menu-link sa-menu-link">
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div class="menu-text">Analytics <span class="menu-label">Novo</span></div>
+                    <!-- <div class="menu-badge">10</div> -->
+                    <div class="menu-caret"></div>
+                </a>
+                <div class="menu-submenu">
+                    <div class="menu-item">
+                        <a href="email_inbox.html" class="menu-link sa-menu-link">
+                            <div class="menu-text">Mobilidade Criminal</div>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="email_compose.html" class="menu-link sa-menu-link">
+                            <div class="menu-text">Mapa atuação alertas</div>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="email_detail.html" class="menu-link sa-menu-link">
+                            <div class="menu-text">Localização Viaturas</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="menu-item has-sub">
+                <a href="javascript:;" class="menu-link sa-menu-link">
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="menu-text">Usuários</div>
+                    <div class="menu-caret"></div>
+                </a>
+                <div class="menu-submenu">
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link">
+                            <div class="menu-text">Dashboard <i class="fa-solid fa-circle text-theme"></i></div>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link">
+                            <div class="menu-text">Cadastro</div>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#index.html" class="menu-link sa-menu-link">
+                            <div class="menu-text">Grupos</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item has-sub">
+                <a href="javascript:;" class="menu-link sa-menu-link">
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <div class="menu-text">Infraestrutura</div>
+                    <div class="menu-caret"></div>
+                </a>
+                <div class="menu-submenu">
+                    <div class="menu-item">
+                        <a href="form_elements.html" class="menu-link sa-menu-link">
+                            <div class="menu-text">Dashboard <i class="fa fa-paper-plane text-theme"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <a href="#" class="menu-link sa-menu-link">
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <div class="menu-text">Configurações</div>
+                </a>
+            </div>
+            
+            
+            <!-- BEGIN minify-button -->
+            <div class="menu-item d-flex">
+                <a href="javascript:;" class="app-sidebar-minify-btn ms-auto d-flex align-items-center text-decoration-none" data-toggle="app-sidebar-minify"><i class="fa fa-angle-double-left"></i></a>
+            </div>
+            <!-- END minify-button -->
+        </div>
+        <!-- END menu -->
+    </div>
+    <!-- END scrollbar -->
+</div>
+<div class="app-sidebar-bg"></div>
+<div class="app-sidebar-mobile-backdrop"><a href="#" data-dismiss="app-sidebar-mobile" class="stretched-link"></a></div>
+<!-- END #sidebar -->
+
+<!-- BEGIN #content -->
+<div id="content" class="app-content"></div>
+<!-- END #content -->
+
+<!-- BEGIN theme-panel -->
+<!-- moved to old/theme-panel.html -->
+<!-- END theme-panel -->
+<!-- BEGIN scroll-top-btn -->
+<a href="javascript:;" class="btn btn-icon btn-circle btn-theme btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+<!-- END scroll-top-btn -->
+
+<script>
+    $(function () {
+        SecAdminApp.registerMenuHandler();
+
+        $('.sa-user-avatar').attr('src', SecAdminApp.Store.get('Auth').user.photoUrl);
+        $('.sa-user-name').text(SecAdminApp.Store.get('Auth').user.username);
+        // SecAdminApp.loadComponent('dashboard/index');
+        SecAdminApp.loadComponent('operacoes/form');
+        
+        App.init()
+    })
+</script>

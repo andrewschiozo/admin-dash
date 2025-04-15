@@ -1,0 +1,221 @@
+<style>
+    .blink {
+        animation: blinker 1s linear infinite;
+    }
+
+    @keyframes blinker {  
+        50% { opacity: 0; }
+    }
+</style>
+<!-- BEGIN breadcrumb -->
+<ol class="breadcrumb float-xl-end">
+    <li class="breadcrumb-item"><a href="#dashboard" data-component="dashboard/index" class="sa-menu-link">Home</a></li>
+    <li class="breadcrumb-item">Operações</li>
+    <li class="breadcrumb-item active">Dashboard</li>
+</ol>
+<!-- END breadcrumb -->
+ 
+<!-- BEGIN page-header -->
+<h1 class="page-header mb-3">Operações</h1>
+<!-- END page-header -->
+
+<!-- BEGIN row -->
+<div class="row">
+    <div class="col-xl-6">
+        <div class="row">
+            <!-- Em andamento -->
+            <div class="col-sm-6">
+                <div class="card border-0 text-truncate mb-3 ">
+                    <div class="card-body">
+                        <header class="mb-3">
+                            <b class="mb-3">EM ANDAMENTO - <em class="sa-date-today"></em></b> 
+                            <span class="ms-2"><i class="fa fa-info-circle" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-title="Conversion Rate" data-bs-placement="top" data-bs-content="Percentage of sessions that resulted in orders from total number of sessions." data-original-title="" title=""></i></span>
+                        </header>
+                                                 
+                        <div class="d-flex align-items-center mb-5">
+                            <h2 class="text-white mb-0" style="font-size: 4em;"><span data-animation="number" data-value="26">0</span></h2>
+                            <div class="ms-auto">
+                                <div id="conversion-rate-sparkline"></div>
+                            </div>
+                        </div>
+                         
+                        <div class="d-flex mb-2">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-circle text-red fs-8px me-2"></i>
+                                Pessoas Confirmadas
+                            </div>
+                            <div class="d-flex align-items-center ms-auto">
+                                <div class="small"> <span data-animation="number" data-value="11">0</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-2">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-circle text-warning fs-8px me-2"></i>
+                                Pessoas Encontradas
+                            </div>
+                            <div class="d-flex align-items-center ms-auto">
+                                <div class="small"><span data-animation="number" data-value="32">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Neste mês -->
+            <div class="col-sm-6">
+                <div class="card border-0 text-truncate mb-3 ">
+                    <div class="card-body">
+                        <header class="mb-3">
+                            <b class="mb-3">NESTE MÊS - <em class="sa-date-month"></em></b> 
+                            <span class="ms-2"><i class="fa fa-info-circle" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-title="Store Sessions" data-bs-placement="top" data-bs-content="Number of sessions on your online store. A session is a period of continuous activity from a visitor." data-original-title="" title=""></i></span>
+                        </header>
+                        
+                        <div class="d-flex align-items-center mb-1">
+                            <h2 class="text-white mb-0" style="font-size: 4em;"><span data-animation="number" data-value="214">0</span></h2>
+                            <div class="ms-auto">
+                                <div id="store-session-sparkline"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <i class="fa fa-caret-up"></i> <span data-animation="number" data-value="12">0.00</span>% comparado ao último mês
+                        </div>
+                        
+                        <div class="d-flex mb-2">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-circle text-teal fs-8px me-2"></i>
+                                Indicador
+                            </div>
+                            <div class="d-flex align-items-center ms-auto">
+                                <div class="small"><i class="fa fa-caret-up"></i> <span data-animation="number" data-value="25">0</span>%</div>
+                                <div class="w-50px text-end ps-2 fw-bold"><span data-animation="number" data-value="210">0</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-2">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-circle text-blue fs-8px me-2"></i>
+                                Outro Indicador
+                            </div>
+                            <div class="d-flex align-items-center ms-auto">
+                                <div class="small"><i class="fa fa-caret-up"></i> <span data-animation="number" data-value="16">0</span>%</div>
+                                <div class="w-50px text-end ps-2 fw-bold"><span data-animation="number" data-value="959">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="panel">
+            <div class="panel-heading ui-sortable-handle">
+                <h4 class="panel-title fw-bold">REGISTRO DE OPERAÇÕES</h4>
+                <div class="panel-heading-btn">
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                </div>
+            </div>
+            
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Operação</th>
+                                <th>Início</th>
+                                <th>Fim</th>
+                                <th>Efetivo Alocado</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        <tr>
+                            <td>1008</td>
+                            <td>Operação 1003 <i class="fa fa-circle text-danger ms-2 blink"></i></td>
+                            <td>22/05/2025 09:00</td>
+                            <td>22/05/2025 19:00</td>
+                            <td>89</td>
+                            <td class="text-danger">Em andamento</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1007</td>
+                            <td>Operação 1007 <i class="fa fa-circle text-danger ms-2 blink"></i></td>
+                            <td>22/05/2025 09:00</td>
+                            <td>22/05/2025 19:00</td>
+                            <td>89</td>
+                            <td class="text-danger">Em andamento</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1006</td>
+                            <td>Operação 1006</td>
+                            <td>22/05/2025 09:00</td>
+                            <td>22/05/2025 19:00</td>
+                            <td>89</td>
+                            <td class="text-warning">Começa em breve</td>
+                        </tr>
+                        <tr>
+                            <td>1005</td>
+                            <td>Operação 1005</td>
+                            <td>22/05/2025 09:00</td>
+                            <td>22/05/2025 19:00</td>
+                            <td>89</td>
+                            <td class="text-info">Aguardando início</td>
+                        </tr>
+                        <tr>
+                            <td>1004</td>
+                            <td>Operação 1004</td>
+                            <td>22/05/2025 09:00</td>
+                            <td>22/05/2025 19:00</td>
+                            <td>89</td>
+                            <td class="text-info">Aguardando início</td>
+                        </tr>
+                        <tr>
+                            <td>1003</td>
+                            <td>Operação 1003</td>
+                            <td>22/05/2025 09:00</td>
+                            <td>22/05/2025 19:00</td>
+                            <td>89</td>
+                            <td class="text-info">Aguardando início</td>
+                        </tr>
+                        <tr>
+                            <td>1002</td>
+                            <td>Operação 1002</td>
+                            <td>01/04/2025 14:00</td>
+                            <td>01/04/2025 22:00</td>
+                            <td>125</td>
+                            <td class="text-success">Finalizada</td>
+                        </tr>
+                        <tr>
+                            <td>1001</td>
+                            <td>Operação 1001</td>
+                            <td>01/04/2025 05:00</td>
+                            <td>01/04/2025 15:00</td>
+                            <td>125</td>
+                            <td class="text-success">Finalizada</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script src="assets/js/demo/dashboard-v3.js"></script> -->
+<script>
+    $(function () {
+        App.init()
+        $('.sa-date-today').text(moment().format('DD/MM/YYYY'));
+        $('.sa-date-month').text(moment().format('MMMM/YYYY'));
+    })
+</script>

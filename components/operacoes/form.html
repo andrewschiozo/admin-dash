@@ -1,0 +1,247 @@
+<style>
+    .blink {
+        animation: blinker 1s linear infinite;
+    }
+
+    @keyframes blinker {  
+        50% { opacity: 0; }
+    }
+
+    select option {
+        background-color: rgba(0, 0, 0, 0.707);
+    }
+</style>
+<!-- BEGIN breadcrumb -->
+<ol class="breadcrumb float-xl-end">
+    <li class="breadcrumb-item"><a href="#dashboard" data-component="dashboard/index" class="sa-menu-link">Home</a></li>
+    <li class="breadcrumb-item"><a href="#operacoes" data-component="operacoes/index" class="sa-menu-link">Operações</a></li>
+    <li class="breadcrumb-item active">Cadastro de Operação</li>
+</ol>
+<!-- END breadcrumb -->
+ 
+<!-- BEGIN page-header -->
+<h1 class="page-header mb-3">Operação #</h1>
+<!-- END page-header -->
+
+<div class="row">
+    <div class="col-xl-12 panel">
+        <form role="form" class="p-4">
+            <div class="row">
+                <div class="col-8">
+                    <label class="form-label col-form-label">Nome da Operação</label>
+                    <input type="text" class="form-control" placeholder="Nome da Operação">
+                </div>
+
+                <div class="col-2">
+                    <label class="form-label col-form-label">Início</label>
+                    <input type="datetime-local" class="form-control">
+                </div>
+
+                <div class="col-2">
+                    <label class="form-label col-form-label">Fim</label>
+                    <input type="datetime-local" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <label class="form-label col-form-label">Endereço</label>
+                    <input type="text" class="form-control" placeholder="Endereço da Operação">
+                </div>
+
+                <div class="col-4">
+                    <label class="form-label col-form-label">Tipo Operação</label>
+                    <select class="form-select">
+                        <option>Evento - Futebol</option>
+                        <option>Evento - Show</option>
+                        <option>Monitoramento</option>
+                        <option>Outro tipo de operação</option>
+                        <option>Mais um tipo de operação</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <label class="form-label col-form-label">Observações</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <label for="responsavel" class="form-label col-form-label">Responsável</label>
+                    <div class="input-group">
+                        <input list="responsaveis" class="form-control" name="responsavel" id="responsavel">
+                        <button class="btn btn-outline-secondary" type="button" id="btn-buscar-responsavel"><i class="fa fa-search"></i></button>
+                        <datalist id="responsaveis">
+                            <option value="Major Nonato">
+                            <option value="Capitão Silva">
+                            <option value="Capitão Alves">
+                            <option value="1º Tenente Costa">
+                            <option value="2º Tenente Azevedo">
+                        </datalist>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <label for="efetivo" class="form-label col-form-label">Efetivo em Apoio</label>
+                    <div class="input-group">
+                        <input list="text" class="form-control" id="efetivo" value="150 Policiais" readonly>
+                        <button class="btn btn-outline-secondary" type="button" id="btn-gerenciar-efetivo"><i class="fa fa-users"></i></button>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <label for="efetivo" class="form-label col-form-label">Outras opções</label><div class="input-group">
+                        <input list="text" class="form-control" id="efetivo" value="..." readonly>
+                        <button class="btn btn-outline-secondary" type="button" id="btn-gerenciar-opcoes"><i class="fa fa-cogs"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="widget-map rounded">
+                        <!-- begin widget-input-container -->
+                        <div class="widget-input-container">
+                            <div class="widget-input-icon"><a href="#" class="text-body"><i class="fas fa-video"></i></a></div>
+                            <span class="fw-bold">MAPA DE DISPOSITIVOS</span>
+                        </div>
+                        <!-- end widget-input-container -->
+                        <!-- begin widget-map-body -->
+                        <div class="widget-map-body p-1">
+                            <iframe src="https://www.google.com/maps/d/embed?mid=1c2iIgFdvEQ-9_AjtaUdqbKjIPC4UsiM&hl=pt-BR&ehbc=2E312F" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <!-- end widget-map-body -->
+                        <!-- begin widget-map-list -->
+                        <div class="widget-map-list">
+                            <div class="widget-list bg-none mb-4">
+                                <!-- begin widget-list-item -->
+                                <div class="widget-list-item">
+                                    <div class="widget-list-media text-center">
+                                        
+                                    </div>
+                                </div>
+                                <!-- end widget-list-item -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-4">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card border-0 mb-3 ">
+                            <div class="card-body" style="background: no-repeat bottom right; background-image: url(assets/img/svg/img-4.svg); background-size: auto 60%;">
+                                
+                                <div class="mb-3">
+                                    <b>DISPOSITIVOS (selecione no mínimo um)</b>
+                                </div>
+                                
+                            </div>
+                            <div class="widget-list rounded-bottom" data-bs-theme="dark">
+                                
+                                <a href="#" data-dispositivo-url="https://cameras.cetsp.com.br/Cams/220/" class="sa-dispositivo-view widget-list-item rounded-0 pt-3px">
+                                    <div class="widget-list-media icon">
+                                        <i class="fas fa-video text-white" style="background-color: #1a237e"></i>
+                                    </div>
+                                    <div class="widget-list-content">
+                                        <div class="widget-list-title">
+                                            <input class="form-check-input" type="checkbox" id="checkbox1" />
+                                            <label class="form-check-label">DS0101 - R. Gal Osorio</label>
+                                        </div>
+                                    </div>
+                                    <div class="widget-list-action text-nowrap">
+                                        
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="widget-list-item rounded-0 pt-3px">
+                                    <div class="widget-list-media icon">
+                                        <i class="fas fa-video text-white" style="background-color: #1a237e"></i>
+                                    </div>
+                                    <div class="widget-list-content">
+                                        <div class="widget-list-title">
+                                            <input class="form-check-input" type="checkbox" id="checkbox1" />
+                                            <label class="form-check-label">DS0102 - R. dos Gusmoes</label>
+                                        </div>
+                                    </div>
+                                    <div class="widget-list-action text-nowrap">
+                                        
+                                    </div>
+                                </a>
+            
+                                <a href="#" class="widget-list-item rounded-0 pt-3px">
+                                    <div class="widget-list-media icon">
+                                        <i class="fas fa-video text-white" style="background-color: #1a237e"></i>
+                                    </div>
+                                    <div class="widget-list-content">
+                                        <div class="widget-list-title">                                        
+                                            <input class="form-check-input" type="checkbox" id="checkbox1" />
+                                            <label class="form-check-label">DS0103 - R. Vitória</label>
+                                        </div>
+                                    </div>
+                                    <div class="widget-list-action text-nowrap">
+                                        
+                                    </div>
+                                </a>
+            
+                                <a href="#" class="sa-dispositivo-view widget-list-item rounded-0 pt-3px">
+                                    <div class="widget-list-media icon">
+                                        <i class="fas fa-video text-white bg-danger"></i>
+                                    </div>
+                                    <div class="widget-list-content">
+                                        <div class="widget-list-title">
+                                            <input class="form-check-input" type="checkbox" id="checkbox1" disabled/>
+                                            <label class="form-check-label">DS0104 - R. Aurora (Indisponivel)</label>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="widget-list-action text-nowrap">
+                                        
+                                    </div>
+                                </a>
+            
+                                <a href="#" class="widget-list-item rounded-0 pt-3px">
+                                    <div class="widget-list-media icon">
+                                        <i class="fas fa-video text-white" style="background-color: #1a237e"></i>
+                                    </div>
+                                    <div class="widget-list-content">
+                                        <div class="widget-list-title">
+                                            <input class="form-check-input" type="checkbox" id="checkbox1" />
+                                            <label class="form-check-label">DS0105 - R. Brig. Tobias</div></label>
+                                            
+                                    </div>
+                                    <div class="widget-list-action text-nowrap">
+                                        
+                                    </div>
+                                </a>
+            
+                                <a href="#" class="widget-list-item rounded-0 pt-3px">
+                                    <div class="widget-list-media icon">
+                                        <i class="fas fa-video text-white" style="background-color: #1a237e"></i>
+                                    </div>
+                                    <div class="widget-list-content">
+                                        <div class="widget-list-title">
+                                            <input class="form-check-input" type="checkbox" id="checkbox1" />
+                                            <label class="form-check-label">DS0106 - R. Santa Ifigênia</div></label>
+                                            
+                                    </div>
+                                    <div class="widget-list-action text-nowrap">
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-100">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
