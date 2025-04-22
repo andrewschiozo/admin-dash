@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="favicon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Andrews Costa Chiozo</title>
+    <title>Projeto</title>
 </head>
 <body class="bg-gray-900 text-white font-mono p-4">
     
@@ -13,7 +13,7 @@
         <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-10">
             <source src="wdbl.mp4" type="video/mp4">
         </video>
-        <h1 class="text-8xl font-bold self-center text-center h-full">Portfolio</h1>
+        <h1 class="text-8xl font-bold self-center text-center h-full">Banner</h1>
         <nav class="absolute bottom-4 right-4">
             <ul class="flex space-x-4">
                 <li><a href="#portfolio" class="text-amber-400 font-bold">Portfolio</a></li>
